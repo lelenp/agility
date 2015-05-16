@@ -14,12 +14,17 @@ angular
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise("/logged");
+      $urlRouterProvider.otherwise("/mainPage");
       $stateProvider
         .state('logged', {
           url: '/logged',
           templateUrl: 'views/logged.html',
           controller: 'loggedCtrl'
+        })
+        .state('logged.mainPage', {
+          url: '/mainPage',
+          templateUrl: 'views/mainPage.html',
+          controller: 'mainPageCtrl'
         })
         .state('logged.projects', {
           url: '/projects',
