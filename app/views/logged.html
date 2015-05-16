@@ -1,0 +1,45 @@
+<div class="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="logged">agility</a>
+      </div>
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+        <div class="row" style="margin-top:10px">
+            <div class="col-xs-3">
+                <a ui-sref="logged.projects" class="btn btn-block btn-sm btn-primary">Projects</a>
+            </div>
+            <div class="col-xs-3">
+                <a ui-sref="logged.timesheet" class="btn btn-block btn-sm btn-primary">Timesheet</a>
+            </div>
+            <div class="col-xs-3">
+                <a ui-sref="logged.newIssue" class="btn btn-block btn-sm btn-primary">New issue</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+    <div ui-view></div>
+</div>
+<div class="footer" style="background-color: #ECF0F1;">
+  <div class="container">
+    <div class="row row-centered">
+        <div class="col-xs-2 col-centered">
+            <a class="fotter-text navbar-brand" ui-sref="logged">Contact</a>
+        </div>
+        <div class="col-xs-2 col-centered">
+            <a class="fotter-text navbar-brand" ui-sref="logged">Credits</a>
+        </div>
+        <div class="col-xs-2 col-centered">
+            <a class="fotter-text navbar-brand" ui-sref="logged">Tutorials</a>
+        </div>
+        <div class="col-xs-2 col-centered">
+            <a class="fotter-text navbar-brand" ui-sref="logged">Forum</a>
+        </div>
+        <div><p><small>Copyright 2015</small></p></div>
+    </div>
+    
+  </div>
+</div>
