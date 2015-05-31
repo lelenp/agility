@@ -1,96 +1,196 @@
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 body {
-  padding: 0;
+    padding: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+    font-size: 21px;
+    padding: 14px 24px;
 }
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 .marketing p + h4 {
-  margin-top: 28px;
+    margin-top: 28px;
+}
+
+weak{
+    font-weight: lighter;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+    .container {
+        max-width: 730px;
+    }
+    
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+    .my-windows-title{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 100;
+    }
+    
     .my-todo-search {
-      position: relative;
-      background: #1abc9c;
-      background-size: 16px 16px;
-      border-radius: 6px 6px 0 0;
-      color: #34495e;
-      padding: 1px 20px 1px;
+        position: relative;
+        background: #1abc9c;
+        background-size: 16px 16px;
+        border-radius: 6px 6px 0 0;
+        color: #34495e;
+        padding: 1px 20px 1px;
+        line-height: 50px;
+    }
+    .my-todo {
+        color: #ECF0F1;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        font-weight: lighter;
+    }
+
+    .my-todo ul {
+        background-color: #2c3e50;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border-radius: 0 0 6px 6px;
+    }
+    .my-todo li {
+        background: #34495e;
+        background-size: 20px 20px;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.214;
+        margin-top: 2px;
+        padding: 18px 42px 21px 25px;
+        position: relative;
+        -webkit-transition: .25s;
+        transition: .25s;
+    }
+    .my-todo li:first-child {
+        margin-top: 0;
+    }
+    .my-todo li:last-child {
+        border-radius: 0 0 6px 6px;
+        padding-bottom: 21px;
+    }
+    .my-todo li:hover{
+        background: #384F66;
+    }
+    
+    .my-todo li.my-todo-activity:hover{
+        background: #384F66;
+    }
+    
+    .my-todo li.my-todo-activity {
+        background: #34495e;
+        color: #BDC3C7;
+    }
+
+    .my-todo li.my-todo-activity .todo-name {
+        color: #ECF0F1;
+        font-weight: lighter;
+    }
+    .my-todo li:after {
+        display: block;
+    }
+    
+    .my-todo-time{
+        height: 20px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        margin-top: -10px;
+        background: transparent;
+        color: #ECF0F1;
+    }
+    
+    .my-todo-image {
+        float: left;
+        width: 56px;
+        height: 56px;
+        top: 50%;
+        margin-top: -28px;
+        left: 15px;
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    .my-todo-image img {
+        width: 100%;
+    }
+    
+    .my-todo-content{
+        padding-top: 1px;
+        overflow: hidden;
+        margin-left: 66px;
     }
     
     .row-centered {
-    text-align:center;
+        text-align:center;
     }
     
     .col-centered {
