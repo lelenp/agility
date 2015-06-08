@@ -1,90 +1,84 @@
-    <div class="col-xs-14">
-      <div class="my-todo" background: #900;>
-        <div class="my-todo-search">
-          <p class="my-windows-title">New issue</p>
-        </div>
-          <div class="insidediv">
-			<span class="demo-heading-note"> Project: </span>
-			<br>
-				<div class="col-xs-4">
-				<select class="form-control select select-primary" data-toggle="select">
-					<option value="0">Project 1</option>
-					<option value="1">Project 2</option>
-					<option value="2">Project 3</option>
-				</select>
-				</div> <!-- /.col-xs-3 -->
-			<br>
-			<span class="demo-heading-note"> Type: </span>
-			<br>
-				<div class="col-xs-4">
-				<select class="form-control select select-primary" data-toggle="select">
-					<option value="0">Bug</option>
-					<option value="1">Task</option>
-					<option value="2">Administrative</option>
-				</select>
-				</div> <!-- /.col-xs-3 -->
-			<br>
-			<span class="demo-heading-note"> Name: </span>
-			<br>
-			
-            <div class="col-xs-6">
-				
-				<input type="text" value="" placeholder="Name" class="form-control">
-				
-			</div>
-			<br>
-			<br>
-			<span class="demo-heading-note"> Description: </span>
-			<br>
-			
-            <div class="col-xs-6">
-				
-				<textarea type="text" value="" placeholder="Description" class="form-control" />
-				
-			</div>
-			<br>
-			<br>
-			<br>
-			<span class="demo-heading-note"> Estaminate: </span>
-			<br>
-			<div class="col-xs-6">
-				
-				<input type="text" value="" placeholder="" class="form-control">
-				
-			</div>
-			<br>
-			<br>
-			<span class="demo-heading-note"> Assigned to: </span>
-			<br>
-				<div class="col-xs-4">
-				<select class="form-control select select-primary" data-toggle="select">
-					<option value="0">John Doe</option>
-					<option value="1">Alicia Ask</option>
-					<option value="2">John Snow</option>
-				</select>
-				</div> <!-- /.col-xs-3 -->
-			<br>
-			<span class="demo-heading-note"> Priority: </span>
-				<br>
-				<div class="col-xs-4">
-				<select class="form-control select select-primary" data-toggle="select">
-					<option value="0">High</option>
-					<option value="1">Normal</option>
-					<option value="2">Low</option>
-				</select>
-				</div> <!-- /.col-xs-3 -->
-			<br>
-			<br>
-				
-				<div class="row demo-row">
-				<div class="col-xs-3">
-				<a href="#fakelink" class="btn btn-block btn-lg btn-primary">Add issue</a>
-				</div>
-				<div class="col-xs-3">
-				<a href="#fakelink" class="btn btn-block btn-lg btn-danger">Cancel</a>
-				</div>
-				</div>
-				
-          </div>
-      </div><!-- /.todo -->
+<div class="col-xs-14">
+  <div class="my-todo" background: #900;>
+    <div class="my-todo-search">
+      <p class="my-windows-title">New issue</p>
     </div>
+      <div class="insidediv">
+		<span class="demo-heading-note">Project:</span>
+		<br>
+			<div class="col-xs-4">
+                <select ng-model="data.newIssueData.project" class="form-control select select-primary" data-toggle="select">
+                    <option value="">-- select --</option>
+                    <option value="0">Project 1</option>
+                    <option value="1">Project 2</option>
+                    <option value="2">Project 3</option>
+                </select>
+			</div> <!-- /.col-xs-3 -->
+		<br>
+		<span class="demo-heading-note">Type:</span>
+		<br>
+			<div class="col-xs-4">
+			<select ng-model="data.newIssueData.type" class="form-control select select-primary" data-toggle="select">
+                <option value="">-- select --</option>
+				<option value="BUG">Bug</option>
+				<option value="TASK">Task</option>
+				<option value="ADMINISTRATIVE">Administrative</option>
+			</select>
+			</div> <!-- /.col-xs-3 -->
+		<br>
+		<span class="demo-heading-note">Name:</span>
+		<br>
+        <div class="col-xs-6">
+			<input type="text" value="" placeholder="Name" class="form-control">
+		</div>
+		<br>
+		<br>
+        <span class="demo-heading-note">Description:</span>
+		<br>
+        <div class="col-xs-6">
+			<textarea ng-model="data.newIssueData.description" type="text" placeholder="Description" class="form-control" />
+		</div>
+		<br>
+		<br>
+		<br>
+		<span class="demo-heading-note">Estaminate: </span>
+		<br>
+		<div class="col-xs-6">
+			<input ng-model="data.newIssueData.estaminate" type="text" class="form-control">
+		</div>
+		<br>
+		<br>
+		<span class="demo-heading-note">Assigned to:</span>
+		<br>
+			<div class="col-xs-4">
+                <select ng-model="data.newIssueData.assignedTo" class="form-control select select-primary" data-toggle="select">
+                    <option value="">-- select --</option>
+                    <option value="0">John Doe</option>
+                    <option value="1">Alicia Ask</option>
+                    <option value="2">John Snow</option>
+                </select>
+			</div> <!-- /.col-xs-3 -->
+		<br>
+		<span class="demo-heading-note">Priority:</span>
+			<br>
+			<div class="col-xs-4">
+                <select ng-model="data.newIssueData.priority" class="form-control select select-primary" data-toggle="select">
+                    <option value="">-- select --</option>
+                    <option value="HIGH">High</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="LOW">Low</option>
+                </select>
+			</div> <!-- /.col-xs-3 -->
+		<br>
+		<br>
+          <div class="row demo-row">
+			<div class="col-xs-3">
+			    <a ng-click="addIssue()" class="btn btn-block btn-lg btn-primary">Add issue</a>
+			</div>
+			<div class="col-xs-3">
+			    <a href="#fakelink" class="btn btn-block btn-lg btn-danger">Cancel</a>
+			</div>
+          </div>
+      </div>
+  </div>
+</div>
