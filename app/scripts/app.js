@@ -14,8 +14,13 @@ angular
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise("/mainPage");
+      $urlRouterProvider.otherwise('/login');
       $stateProvider
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'loginCtrl'
+        })
         .state('logged', {
           url: '/logged',
           templateUrl: 'views/logged.html',
