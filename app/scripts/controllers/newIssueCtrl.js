@@ -4,8 +4,12 @@ angular.module('agilityApp')
 .controller('newIssueCtrl', ['$scope', 'newIssueService', function($scope, newIssueService) {
     
     $scope.data =  {
-        newIssueData: {}
+        newIssueData: {},
+        employeeList: [],
+        projectList: []
     };
+    
+    initData();
     
     $scope.addIssue = function() {
         newIssueService.addIssue($scope.data.newIssueData, function(data){
@@ -13,5 +17,15 @@ angular.module('agilityApp')
         });
     };
     
+    function initData(){
+        newIssueService.getEmployeeList(function(data){
+            $scope.data.employeeList = data;
+        });    
+
+        newIssueService.getProjectList(function(data){
+            $scope.data.projectList = data;
+        });
+        
+    }
     
 }]);

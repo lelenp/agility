@@ -4,7 +4,7 @@ angular.module('agilityApp')
 .service('remoteService', ['$http', function($http) {
     
     // do usuniecia jak juz bedzie dzialac na discie  !!!!!
-    var serverUrl = 'http://len.iem.pw.edu.pl:9432';
+    var serverUrl = 'http://reviewpik.cloudapp.net:8080';
     
     this.post = function(url, data, handleResult, handleError) {
         $http.post(serverUrl + url, data).
@@ -20,8 +20,18 @@ angular.module('agilityApp')
           });
     };
     
-    this.get = function() {
-        console.log('getMethod');
+    this.get = function(url, handleResult, handleError) {
+        $http.get(serverUrl + url).
+          success(function(data, status, headers, config) {
+                handleResult(data);
+          }).
+          error(function(data, status, headers, config) {
+                if(!angular.isUndefined(handleError)){
+                    handleError(data);
+                } else {
+                    console.log('Error in get data from URL: ' + serverUrl + url + ' ' + data);
+                }
+          });
     };
     
 }]);
