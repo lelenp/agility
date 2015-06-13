@@ -7,12 +7,8 @@ angular.module('agilityApp')
         remoteService.post('/addIssue', data, handleResult);
     };
     
-    this.getEmployeeList = function(handleResult) {
-        remoteService.get('/lajira/employees', handleResult);
-    }; 
-    
     this.getProjectList = function(handleResult) {
-        remoteService.get('/lajira/projects', handleResult);
+        remoteService.get('/lajira/rest/projects', handleResult);
     }; 
     
 }]);

@@ -3,29 +3,33 @@
     <div class="my-todo-search">
       <p class="my-windows-title">New project</p>
     </div>
-      <div class="insidediv">
+      <div class="insidediv" style="margin-bottom: -100px">
 		<span class="demo-heading-note">Name:</span><br>
         <div class="col-xs-6">
-			<input type="text" placeholder="Name" class="form-control">
+			<input ng-model="data.projectData.name" type="text" placeholder="Name" class="form-control">
 		</div><br><br>
         <span class="demo-heading-note">Description:</span><br>
         <div class="col-xs-6">
-			<textarea ng-model="data.newIssueData.description" type="text" placeholder="Description" class="form-control" />
-		</div><br><br>
+			<textarea ng-model="data.projectData.description" type="text" placeholder="Description" class="form-control" />
+		</div><br><br><br>
 		<span class="demo-heading-note">Lead:</span>
 		<br>
 			<div class="col-xs-4">
-                <select ng-options="item.id as (item.firstName + ' ' + item.lastName) for item in data.employeeList" ng-model="data.newIssueData.assignedTo" class="form-control select select-primary" data-toggle="select">
+                <select ng-options="item.id as (item.firstName + ' ' + item.lastName) for item in data.employeeList" ng-model="data.projectData.lead" class="form-control select select-primary" data-toggle="select">
                     <option value="">-- select --</option>
                 </select>
 			</div>
 		<br>
+        <span class="demo-heading-note">Repository URL:</span><br>
+        <div class="col-xs-6">
+			<input ng-model="data.projectData.repositoryUrl" type="text" placeholder="Repository URL" class="form-control">
+		</div><br><br><br><br>
           <div class="row demo-row">
-			<div class="col-xs-3">
-			    <a ng-click="addProject()" class="btn btn-block btn-lg btn-primary">Add project</a>
+			<div class="col-xs-3 pull-right">
+			    <a ng-click="cancel()" class="btn btn-block btn-lg btn-danger">Cancel</a>
 			</div>
-			<div class="col-xs-3">
-			    <a href="#fakelink" class="btn btn-block btn-lg btn-danger">Cancel</a>
+			<div class="col-xs-3 pull-right">
+			    <a ng-click="addProject()" class="btn btn-block btn-lg btn-primary">Add project</a>
 			</div>
           </div>
       </div>

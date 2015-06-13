@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('newIssueCtrl', ['$scope', 'newIssueService', function($scope, newIssueService) {
+.controller('newIssueCtrl', ['$scope', 'newIssueService','employeeService', function($scope, newIssueService, employeeService) {
     
     $scope.data =  {
         newIssueData: {},
@@ -18,7 +18,7 @@ angular.module('agilityApp')
     };
     
     function initData(){
-        newIssueService.getEmployeeList(function(data){
+        employeeService.getEmployeeList(function(data){
             $scope.data.employeeList = data;
         });    
 
