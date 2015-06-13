@@ -9,8 +9,6 @@ angular.module('agilityApp')
             }
     };
 
-    $scope.data.finishedDate = $filter("date")(Date.now(), 'mm-dd-yyyy');
-
     //do potrzebne jest przekierowanie na strone logowania czasu z query parametrem taskId
     $scope.logTime = function() {
             logTimeService.logTime($scope.data.logTime, $location.search().taskId, function(data){
