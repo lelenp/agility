@@ -10,5 +10,27 @@
                 </div>      
             </div>
         </div>
+        <div class="my-todo" style="background: #34495e;">
+            <table class="table table-condensed my-todo">
+              <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Lead</th>
+                    <th>Current sprint</th>
+                    <th>Backlog</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="project in data.projectList">
+                  <td style="width: 5%;"/td> <!--tutaj będzie ikonka od Przemka ta z mocka-->
+                  <td>{{project.name}}</td>
+                  <td>{{project.lead}}</td>
+                  <td>{{ }}</td>
+                  <td>{{ }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
     </div>
 </div>
