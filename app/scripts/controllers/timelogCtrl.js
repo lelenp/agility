@@ -1,16 +1,15 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('timelogCtrl', ['$scope', function($scope) {
+.controller('timelogCtrl', ['$scope', '$filter', '$location', 'logTimeService', function($scope, $filter, $location, logTimeService) {
 
 
     $scope.data =  {
             logTime: {
-              finishedDate = $filter("date")(Date.now(), 'mm-dd-yyyy')
-            },
+            }
     };
 
-    $scope.data.
+    $scope.data.finishedDate = $filter("date")(Date.now(), 'mm-dd-yyyy');
 
     //do potrzebne jest przekierowanie na strone logowania czasu z query parametrem taskId
     $scope.logTime = function() {

@@ -45,5 +45,10 @@ angular
           url: '/timesheet',
           templateUrl: 'views/timesheet.html',
           controller: 'timesheetCtrl'
+        })
+        .state('logged.timelog', {
+          url: '/timelog',
+          templateUrl: 'views/timelog.html',
+          controller: 'timelogCtrl'
         });
   });
