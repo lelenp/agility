@@ -11,4 +11,8 @@ angular.module('agilityApp')
         remoteService.post('/lajira/rest/projects', data, handleResult);
     };
     
+    this.getProject = function(projectId, handleResult) {
+        remoteService.get('/lajira/rest/projects/description/' + projectId, handleResult);
+    };
+    
 }]);

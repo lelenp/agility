@@ -1,39 +1,33 @@
 <div class="col-xs-14">
    <div class="my-todo" background: #900;>
       <div class="my-todo-search">
-         <p class="my-windows-title">Project name</p>
+         <p class="my-windows-title">{{data.projectData.name}}</p>
       </div>
       <div class="insidediv">
          <span class="demo-heading-note">Description:</span>
          <br>
          <div >
-            <textarea readonly style="resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.newIssueData.description" type="text" class="form-control">Description of project</textarea>
+            <textarea readonly style="resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.description" type="text" class="form-control"></textarea>
          </div>
          <br>      
          <span class="demo-heading-note">Lead:</span>
          <br>
          <div class="col-xs-2">
-            <a ng-click="addIssue()" class="btn btn-block btn-lg btn-primary">John Doe</a>
+            <a class="btn btn-block btn-lg btn-primary">{{data.projectData.lead}}</a>
          </div>
          <br>
          <br>
          <span class="demo-heading-note">Team members:</span>
          <br>
-         <div class="col-xs-2">
-            <a ng-click="addIssue()" class="btn btn-block btn-lg btn-primary">John Doe</a>
-         </div>
-         <div class="col-xs-2">
-            <a ng-click="addIssue()" class="btn btn-block btn-lg btn-primary">John Doe</a>
-         </div>
-         <div class="col-xs-2">
-            <a ng-click="addIssue()" class="btn btn-block btn-lg btn-primary">John Doe</a>
+         <div class="col-xs-2" ng-repeat="employee in data.projectData.assignedEmployees">
+            <a class="btn btn-block btn-lg btn-primary">{{employee}}</a>
          </div>
          <br>
          <br>
          <span class="demo-heading-note">Repository URL:</span>
          <br>
          <div class="col-xs-6" >
-            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.newIssueData.description" type="text" class="form-control">https://github.com/lelenp/agility</textarea>
+            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.repositoryUrl" type="text" class="form-control"></textarea>
          </div>
          <br><br><br>
          <div class="my-todo" background: #900;>
@@ -55,12 +49,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="project in data.projectList">
+                <tr ng-repeat="task in data.projectData.tasks">
                   <td style="width: 5%;"/td> <!--tutaj będzie ikonka od Przemka ta z mocka-->
-                  <td><b>{{project.name}}</b></td>
-                  <td><b>{{project.lead}}</b></td>
-                  <td><p><b>{{project.tasks_active}} active - <span style="color: green">{{project.tasks_completed}} completed</span></b></p></td>
-                  <td><p><b>{{project.tasks_all}}</b> tasks estimated for <b>{{project.estimatedTime}}</b></p></td>
+                  <td><b>{{task.name}}</b></td>
+                  <td><b>{{task.assignedTo}}</b></td>
+                  <td><p><b>{{project.spentTime}}</b></p></td>
                 </tr>
               </tbody>
             </table>

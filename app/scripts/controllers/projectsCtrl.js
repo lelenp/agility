@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('projectsCtrl', ['$scope','$modal','projectService', function($scope, $modal, projectService) {
+.controller('projectsCtrl', ['$scope','$modal','$state', 'projectService', function($scope, $modal, $state, projectService) {
     
     $scope.data = {
         projectList: []
@@ -22,6 +22,10 @@ angular.module('agilityApp')
         
     }
     
+    $scope.goToProjectPage = function(projectId){
+        $state.go('logged.projectPage', {'id': projectId});
+    }   
+
     function getMyProjectList(){
         projectService.getMyProjectList(function(data){
             $scope.data.projectList = data;
