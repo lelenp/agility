@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('newIssueCtrl', ['$scope', 'newIssueService','employeeService', function($scope, newIssueService, employeeService) {
+.controller('newIssueCtrl', ['$scope','$state', 'newIssueService','employeeService', function($scope, $state, newIssueService, employeeService) {
     
     $scope.data =  {
-        newIssueData: {},
+        newIssueData: {
+            state: "NEW"
+        },
         employeeList: [],
         projectList: []
     };
@@ -13,7 +15,7 @@ angular.module('agilityApp')
     
     $scope.addIssue = function() {
         newIssueService.addIssue($scope.data.newIssueData, function(data){
-            console.log(data);
+            $state.go('logged.projects');
         });
     };
     

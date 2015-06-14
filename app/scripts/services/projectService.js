@@ -3,8 +3,8 @@
 angular.module('agilityApp')
 .service('projectService', ['remoteService', function(remoteService) {
     
-    this.getProjectList = function(handleResult) {
-        remoteService.get('/lajira/rest/projects', handleResult);
+    this.getMyProjectList = function(handleResult) {
+        remoteService.get('/lajira/rest/projects/my', handleResult);
     }; 
     
     this.addProject = function(data, handleResult) {

@@ -17,19 +17,19 @@ angular.module('agilityApp')
         });
         
         modalInstance.result.then(function () {
-            getProjectList();
+            getMyProjectList();
         });
         
     }
     
-    function getProjectList(){
-        projectService.getProjectList(function(data){
+    function getMyProjectList(){
+        projectService.getMyProjectList(function(data){
             $scope.data.projectList = data;
         });
     }
     
     function initData(){
-        getProjectList();
+        getMyProjectList();
     }
     
 }]);

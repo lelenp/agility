@@ -24,10 +24,10 @@
               <tbody>
                 <tr ng-repeat="project in data.projectList">
                   <td style="width: 5%;"/td> <!--tutaj będzie ikonka od Przemka ta z mocka-->
-                  <td>{{project.name}}</td>
-                  <td>{{project.lead}}</td>
-                  <td>{{ }}</td>
-                  <td>{{ }}</td>
+                  <td><b>{{project.name}}</b></td>
+                  <td><b>{{project.lead}}</b></td>
+                  <td><p><b>{{project.tasks_active}} active - <span style="color: green">{{project.tasks_completed}} completed</span></b></p></td>
+                  <td><p><b>{{project.tasks_all}}</b> tasks estimated for <b>{{project.estimatedTime}}</b></p></td>
                 </tr>
               </tbody>
             </table>
