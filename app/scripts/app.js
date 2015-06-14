@@ -47,6 +47,11 @@ angular
           templateUrl: 'views/timesheet.html',
           controller: 'timesheetCtrl'
         })
+        .state('logged.projectPage', {
+          url: '/projectPage',
+          templateUrl: 'views/projectPage.html',
+          controller: 'projectPageCtrl'
+        })        
         .state('logged.timelog', {
           url: '/timelog',
           templateUrl: 'views/timelog.html',
