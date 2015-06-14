@@ -22,7 +22,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="project in data.projectList">
+                <tr ng-repeat="project in data.projectList" ng-dblclick="goToProjectPage(project.id)">
                   <td style="width: 5%;"/td> <!--tutaj będzie ikonka od Przemka ta z mocka-->
                   <td><b>{{project.name}}</b></td>
                   <td><b>{{project.lead}}</b></td>

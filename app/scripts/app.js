@@ -48,7 +48,7 @@ angular
           controller: 'timesheetCtrl'
         })
         .state('logged.projectPage', {
-          url: '/projectPage',
+          url: '/projectPage/:id',
           templateUrl: 'views/projectPage.html',
           controller: 'projectPageCtrl'
         })        
