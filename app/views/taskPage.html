@@ -13,7 +13,7 @@
          <span class="demo-heading-note">Assigned to:</span>
          <br>
          <div class="col-xs-2">
-            <a class="btn btn-block btn-lg btn-primary">{{data.taskData.assignedTo}}</a>
+            <a class="btn btn-block btn-lg btn-primary">{{data.taskData.assignedToFullName}}</a>
          </div>
          <br>
          <br>
@@ -46,7 +46,7 @@
           <br>
           <br>
          <div class="col-xs-3" >
-            <a ng-show="data.taskData.state != 'FINISHED'" class="btn btn-block btn-lg btn-danger">{{data.taskData.state == 'NEW' ? 'Mark as in progress' : 'Mark as finished' }}</a>
+            <a ng-show="data.taskData.state != 'FINISHED'" ng-click="changeTaskStatus(data.taskData.state)" class="btn btn-block btn-lg btn-danger">{{data.taskData.state == 'NEW' ? 'Mark as in progress' : 'Mark as finished' }}</a>
          </div>
         <div class="col-xs-3" >
             <a ng-show="data.taskData.state == 'IN_WORK'" ng-click="logTime()" class="btn btn-block btn-lg btn-primary">Log time</a>

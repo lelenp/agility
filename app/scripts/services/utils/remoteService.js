@@ -23,6 +23,23 @@ angular.module('agilityApp')
           });
     };
     
+    this.put = function(url, data, handleResult, handleError) {
+        showLoadingInfo();
+        $http.put(serverUrl + url, data).
+          success(function(data, status, headers, config) {
+                handleResult(data);
+                hideLoadingInfo();
+          }).
+          error(function(data, status, headers, config) {
+                if(!angular.isUndefined(handleError)){
+                    handleError(data);
+                } else {
+                    console.log('Error in post data to URL: ' + serverUrl + url + ' ' + data);
+                }
+                hideLoadingInfo();
+          });
+    };
+    
     this.get = function(url, handleResult, handleError) {
         showLoadingInfo();
         $http.get(serverUrl + url).

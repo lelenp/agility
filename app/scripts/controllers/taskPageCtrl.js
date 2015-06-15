@@ -27,8 +27,18 @@ angular.module('agilityApp')
         modalInstance.result.then(function () {
             getTask($stateParams.id);
         });
-        
-        
+    }
+    
+    $scope.changeTaskStatus = function(taskState) {
+        var stateToSet = null;
+        if(taskState == 'IN_WORK'){
+            stateToSet = 'FINISHED';
+        } else if(taskState == 'NEW'){
+            stateToSet = 'IN_WORK';
+        }
+        projectService.changeTaskState($stateParams.id, stateToSet, function(data){
+            getTask($stateParams.id);
+        });
     }
     
     

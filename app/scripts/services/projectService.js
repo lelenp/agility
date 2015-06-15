@@ -19,4 +19,8 @@ angular.module('agilityApp')
         remoteService.get('/lajira/rest/tasks/' + taskId, handleResult);
     };
     
+    this.changeTaskState = function(taskId, taskState, handleResult) {
+        remoteService.put('/lajira/rest/tasks/state/' + taskId, {'state': taskState},  handleResult);
+    };
+    
 }]);
