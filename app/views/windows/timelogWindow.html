@@ -3,7 +3,7 @@
     <div class="my-todo-search">
       <p class="my-windows-title">Log time</p>
     </div>
-    <div class="insidediv">
+    <div class="insidediv" style="margin-bottom: -100px">
       <span class="demo-heading-note">Hours:</span>
       <br>
       <div class="col-xs-6">
@@ -11,19 +11,19 @@
       </div>
       <br>
       <br>
-      <span class="demo-heading-note">Date (if task finished):</span>
+      <span class="demo-heading-note">Date:</span>
       <br>
       <div class="col-xs-6">
-        <input type="date" value="" ng-model="data.logTime.finishedDate" class="form-control">
+        <input type="date" value="" ng-model="data.logTime.spentDate" class="form-control">
       </div>
       <br>
       <br>
       <div class="row demo-row">
-        <div class="col-xs-3">
-          <a ng-click="logTime()" class="btn btn-block btn-lg btn-primary">Log time</a>
+        <div class="col-xs-3 pull-right">
+          <a ng-click="cancel()" class="btn btn-block btn-lg btn-danger">Cancel</a>
         </div>
-        <div class="col-xs-3">
-          <a href="#fakelink" class="btn btn-block btn-lg btn-danger">Cancel</a>
+        <div class="col-xs-3 pull-right">
+          <a ng-click="logTime()" class="btn btn-block btn-lg btn-primary">Log time</a>
         </div>
       </div>
     </div>

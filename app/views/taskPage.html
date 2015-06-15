@@ -49,7 +49,7 @@
             <a ng-show="data.taskData.state != 'FINISHED'" class="btn btn-block btn-lg btn-danger">{{data.taskData.state == 'NEW' ? 'Mark as in progress' : 'Mark as finished' }}</a>
          </div>
         <div class="col-xs-3" >
-            <a ng-show="data.taskData.state == 'IN_WORK'" class="btn btn-block btn-lg btn-primary">Log time</a>
+            <a ng-show="data.taskData.state == 'IN_WORK'" ng-click="logTime()" class="btn btn-block btn-lg btn-primary">Log time</a>
          </div>
 <br>
           <br>

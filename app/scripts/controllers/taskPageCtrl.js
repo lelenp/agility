@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('taskPageCtrl', ['$scope','$stateParams', 'projectService', function($scope, $stateParams, projectService) {
+.controller('taskPageCtrl', ['$scope','$stateParams','$modal', 'projectService', function($scope, $stateParams, $modal, projectService) {
     
     $scope.data = {
         priorityTranslate: {'LOW':'Low','HIGH':'High', 'NORMAL':'Normal'},
@@ -12,9 +12,32 @@ angular.module('agilityApp')
     
     initData();
     
+    $scope.logTime = function() {
+        var modalInstance = $modal.open({
+            templateUrl: 'views/windows/timelogWindow.html',
+            controller: 'timelogWindowCtrl',
+            size: 'lg',
+            resolve: {
+                taskId: function () {
+                    return $stateParams.id;
+                }
+            }
+        });
+        
+        modalInstance.result.then(function () {
+            getTask($stateParams.id);
+        });
+        
+        
+    }
+    
     
     function initData(){
-        var taskId = $stateParams.id;
+        getTask($stateParams.id);
+
+    }
+    
+    function getTask(taskId){
         projectService.getTask(taskId, function(data){
            $scope.data.taskData = data;
         });
