@@ -1,55 +1,55 @@
 <div class="col-xs-14">
    <div class="my-todo" background: #900;>
       <div class="my-todo-search">
-         <p class="my-windows-title">{{data.projectData.name}}</p>
+         <p class="my-windows-title">{{data.taskData.name}}</p>
       </div>
       <div class="insidediv">
          <span class="demo-heading-note">Description:</span>
          <br>
          <div >
-            <textarea readonly style="resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.description" type="text" class="form-control"></textarea>
+            <textarea readonly style="resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.taskData.description" type="text" class="form-control"></textarea>
          </div>
          <br>      
          <span class="demo-heading-note">Assigned to:</span>
          <br>
          <div class="col-xs-2">
-            <a class="btn btn-block btn-lg btn-primary">{{data.projectData.lead}}</a>
+            <a class="btn btn-block btn-lg btn-primary">{{data.taskData.assignedTo}}</a>
          </div>
          <br>
          <br>
          <span class="demo-heading-note">Original estimate:</span>
          <br>
          <div class="col-xs-1" >
-            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.repositoryUrl" type="text" class="form-control"></textarea>
+            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.taskData.estimatedTime" type="text" class="form-control"></textarea>
          </div>
          <br><br>
           <span class="demo-heading-note">Hours logged:</span>
          <br>
          <div class="col-xs-1" >
-            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.repositoryUrl" type="text" class="form-control"></textarea>
+            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.taskData.spentTime" type="text" class="form-control"></textarea>
          </div>
           <br>
           <br>
           <span class="demo-heading-note">Priority:</span>
          <br>
          <div class="col-xs-2">
-            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.repositoryUrl" type="text" class="form-control"></textarea>
+            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.priorityTranslate[data.taskData.priority]" type="text" class="form-control"></textarea>
          </div>
           <br>
           <br>
           <span class="demo-heading-note">Status:</span>
          <br>
          <div class="col-xs-2">
-            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.projectData.repositoryUrl" type="text" class="form-control"></textarea>
+            <textarea readonly style="height: 45px; resize: none; opacity: 1; color:white; background-color:#1ABC9C; border-color:#1ABC9C;" ng-model="data.statusTranslate[data.taskData.state]" type="text" class="form-control"></textarea>
          </div>
           <br>
           <br>
           <br>
          <div class="col-xs-3" >
-            <a class="btn btn-block btn-lg btn-danger">Mark as finished</a>
+            <a ng-show="data.taskData.state != 'FINISHED'" class="btn btn-block btn-lg btn-danger">{{data.taskData.state == 'NEW' ? 'Mark as in progress' : 'Mark as finished' }}</a>
          </div>
         <div class="col-xs-3" >
-            <a class="btn btn-block btn-lg btn-primary">Log time</a>
+            <a ng-show="data.taskData.state == 'IN_WORK'" class="btn btn-block btn-lg btn-primary">Log time</a>
          </div>
 <br>
           <br>

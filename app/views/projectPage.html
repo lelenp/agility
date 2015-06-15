@@ -49,7 +49,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="task in data.projectData.tasks">
+                <tr ng-repeat="task in data.projectData.tasks" ng-dblclick="goToTaskPage(task.id)">
                   <td style="width: 5%;"/td> <!--tutaj będzie ikonka od Przemka ta z mocka-->
                   <td><b>{{task.name}}</b></td>
                   <td><b>{{task.assignedTo}}</b></td>

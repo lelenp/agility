@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('projectPageCtrl', ['$scope','$stateParams', 'projectService', function($scope, $stateParams, projectService) {
+.controller('projectPageCtrl', ['$scope','$stateParams','$state', 'projectService', function($scope, $stateParams, $state, projectService) {
     
     $scope.data = {
         projectData: {}
@@ -9,6 +9,9 @@ angular.module('agilityApp')
     
     initData();
     
+    $scope.goToTaskPage = function(projectId){
+        $state.go('logged.taskPage', {'id': projectId});
+    } 
     
     function initData(){
         var projectId = $stateParams.id;

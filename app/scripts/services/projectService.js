@@ -15,4 +15,8 @@ angular.module('agilityApp')
         remoteService.get('/lajira/rest/projects/description/' + projectId, handleResult);
     };
     
+    this.getTask = function(taskId, handleResult) {
+        remoteService.get('/lajira/rest/tasks/' + taskId, handleResult);
+    };
+    
 }]);
