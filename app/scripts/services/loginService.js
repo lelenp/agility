@@ -7,4 +7,9 @@ angular.module('agilityApp')
         remoteService.post('/lajira/rest/authentication/login', data, handleResult);
     };
     
+    
+    this.logout = function(handleResult) {
+        remoteService.get('/lajira/rest/authentication/logout', handleResult);
+    };
+    
 }]);
