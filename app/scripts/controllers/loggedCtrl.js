@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('loggedCtrl', ['$scope','$state', 'loginService', function($scope, $state, loginService) {
+.controller('loggedCtrl', ['$scope','$modal', '$state', 'loginService', function($scope, $modal, $state, loginService) {
     
     $scope.logout = function(){
         loginService.logout(function(data){
@@ -9,4 +9,16 @@ angular.module('agilityApp')
         });
     }
     
+    $scope.addIssue = function(){
+        var modalInstance = $modal.open({
+            templateUrl: 'views/windows/newIssueWindow.html',
+            controller: 'newIssueWindowCtrl',
+            size: 'lg'
+        });
+        
+        modalInstance.result.then(function () {
+            getMyProjectList();
+        });
+        
+    }
 }]);

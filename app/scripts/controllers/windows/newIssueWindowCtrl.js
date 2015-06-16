@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('agilityApp')
-.controller('newIssueCtrl', ['$scope','$state', 'newIssueService','employeeService', function($scope, $state, newIssueService, employeeService) {
+.controller('newIssueWindowCtrl', ['$scope','$modalInstance', '$state', 'newIssueService','employeeService', function($scope, $modalInstance, $state, newIssueService, employeeService) {
     
     $scope.data =  {
         newIssueData: {
@@ -28,6 +28,10 @@ angular.module('agilityApp')
             $scope.data.projectList = data;
         });
         
+    }
+    
+    $scope.cancel = function(){
+        $modalInstance.dismiss('cancel');
     }
     
 }]);

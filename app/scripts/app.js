@@ -40,11 +40,6 @@ angular
           templateUrl: 'views/projects.html',
           controller: 'projectsCtrl'
         })
-        .state('logged.newIssue', {
-          url: '/newIssue',
-          templateUrl: 'views/newIssue.html',
-          controller: 'newIssueCtrl'
-        })
         .state('logged.timesheet', {
           url: '/timesheet',
           templateUrl: 'views/timesheet.html',
