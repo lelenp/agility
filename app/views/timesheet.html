@@ -1,11 +1,11 @@
 
-<div>
-
-<table class="table table-bordered" id="tblGrid">
+<div ng-controller="timesheetCtrl">
+    
+<table style="margin-top: 30px;" id="timeTable" class="table table-bordered" id="tblGrid">
             <thead id="tblHead">
               <tr>
-                <th>Task</th>
-                <th>01</th>
+                <th></th>
+                <th >01</th>
                 <th>02</th>
                 <th>03</th>
                 <th>04</th>
@@ -36,9 +36,45 @@
                 <th>30</th>
               </tr>
             </thead>
+                <thead id="tblHead2">
+              <tr>
+                <th></th>
+                <th >M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+                <th >M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+                <th >M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+                <th >M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+                <th>S</th>
+                <th >M</th>
+              </tr>
+            </thead>
             <tbody>
               <tr><td>Task 1</td>
-                <td></td>
+                <td>        
+                    <span buttons="no" editable-number="user.number" e-min="0" e-max="24"> {{ user.number || 0 }} </span>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>

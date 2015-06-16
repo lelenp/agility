@@ -207,6 +207,7 @@ weak{
         display: block;
     }
     
+
     .my-todo-time{
         height: 20px;
         position: absolute;
@@ -257,6 +258,42 @@ weak{
     .fotter-text {
         color:black;
         font-size:15px
+    }
+    
+    .table td{
+        text-align: center;   
+    }
+    
+     .table th{
+        text-align: center;   
+    }
+    
+    span.editable-empty
+    {
+        color:#34495E;
+        border-bottom: none;
+        font-style: normal;
+    }
+    
+        span.editable-click
+    {
+        color:#34495E;
+        border-bottom: none;
+        font-style: normal;
+    }
+    
+    span.editable-empty:hover
+    {
+        color:#1ABC9C;
+        border-bottom: none;
+        font-style: normal;
+    }
+    
+    span.editable-click:hover
+    {
+        color:#1ABC9C;
+        border-bottom: none;
+        font-style: normal;
     }
 }
 

@@ -12,7 +12,8 @@ angular
   .module('agilityApp', [
     'ngResource',
     'ui.bootstrap',
-    'ui.router'
+    'ui.router',
+    'xeditable'
   ])
 
   .config(function ($stateProvider, $urlRouterProvider) {

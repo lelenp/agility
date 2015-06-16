@@ -9,7 +9,9 @@
     "angular-ui-router": "~0.2.14",
     "flat-ui": "~2.2.2",
     "angular-bootstrap": "~0.13.0",
-    "free-jqgrid": "~4.9.0"
+    "free-jqgrid": "~4.9.0",
+    "angular-xeditable": "~0.1.9",
+    "bootstrap-monthpicker": "*"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

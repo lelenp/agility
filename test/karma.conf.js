@@ -30,6 +30,8 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/free-jqgrid/js/jquery.jqgrid.min.js',
       'bower_components/free-jqgrid/js/jquery.jqgrid.src.js',
+      'bower_components/angular-xeditable/dist/js/xeditable.js',
+      'bower_components/bootstrap-monthpicker/bootstrap-monthpicker.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
