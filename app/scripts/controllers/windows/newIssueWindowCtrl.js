@@ -15,6 +15,7 @@ angular.module('agilityApp')
     
     $scope.addIssue = function() {
         newIssueService.addIssue($scope.data.newIssueData, function(data){
+            $modalInstance.dismiss('cancel');
             $state.go('logged.projects');
         });
     };
