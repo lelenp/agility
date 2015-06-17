@@ -27,6 +27,7 @@ angular.module('agilityApp')
         modalInstance.result.then(function () {
             getTask($stateParams.id);
         });
+        
     }
     
     $scope.changeTaskStatus = function(taskState) {

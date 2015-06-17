@@ -14,7 +14,7 @@ angular.module('agilityApp')
     
     $scope.logTime = function() {
         logTimeService.logTime($scope.data.logTime, taskId, function(data){
-            $modalInstance.close();
+	        $modalInstance.dismiss('cancel');
         });
     };
 
