@@ -6,6 +6,6 @@ angular.module('agilityApp')
     
  $scope.users = [
 
-  ];
+ ];
     
 }]);

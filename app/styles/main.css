@@ -272,6 +272,10 @@ weak{
         background: #384F66;
     }
     
+    #timeTable tr:hover{
+        background: transparent;
+    }
+    
     span.editable-empty
     {
         color:#34495E;
@@ -279,7 +283,7 @@ weak{
         font-style: normal;
     }
     
-        span.editable-click
+    span.editable-click
     {
         color:#34495E;
         border-bottom: none;
